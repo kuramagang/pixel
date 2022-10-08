@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--
+    CREATED BY @BWCABOY
+-->
+<html>
+    <head>
+        <title>Monster Suit Pixel</title>
+        <link rel="icon" type="image/png" href="/assets/favicon.a3c7bd60.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" type="image/png" href="/assets/zetsu.d7d741fa.png">
+        <style>
+            body {
+                font-family: Poppins, sans-serif;
+            }
+            
+            ul {
+                padding-inline-start: 0;
+            }
+            li {
+                list-style: none;
+                
+            }
+            .grid {
+                display: grid;
+                gap: 0rem;
+                grid-template-columns: repeat(auto-fit, 9.5rem);
+                grid-auto-flow: dense;
+                justify-content: center;
+                height: 100%;
+            }
+            .suitImage {
+                width: 9rem;
+                transform: scale(1);
+                transition: transform 0.5s;
+            }
+            .suitImage:hover {
+                transform: scale(1.05);
+                transition: transform 0.5s;
+            }
+            
+            p {
+                transform: scale(1);
+                transition: transform 0.5s;
+            }
+            p:hover{
+                background: rgb(201, 211, 252);
+                cursor: pointer;
+                transform: scale(1.05);
+                transition: transform 0.5s;
+            }
+            img:hover {
+                cursor: pointer;
+            }
+
+            .categoryGen1 {
+                color: #6F63B7;
+                font-size: 0.75rem;
+            }
+            .categoryMythical {
+                color: #6F63B7;
+                font-size: 0.75rem;
+            }
+            .categoryGen2 {
+                color: #6F63B7;
+                font-size: 0.75rem;
+            }
+            .categoryTrueDragon {
+                color: #FF9783;
+                font-size: 0.75rem;
+            }
+            .categoryGodDragon {
+                color: #FF9783;
+                font-size: 0.75rem;
+            }
+            .categoryAnimal {
+                color: #BF9877;
+                font-size: 0.75rem;
+            }
+            .categoryBot {
+                color: #AAB6C4;
+                font-size: 0.75rem;
+            }
+            .categoryMech {
+                color: #AAB6C4;
+                font-size: 0.75rem;
+            }
+            .categoryNinja {
+                color: #747474;
+                font-size: 0.75rem;
+            }
+            .categoryTrueFusion {
+                color: linear-gradient(to right, #EFE7A6,#FF9783);
+                font-size: 0.75rem;
+            }
+            .categoryMystic {
+                color: linear-gradient(to right, #EFE7A6,#EBA5E3);
+                font-size: 0.75rem;
+            }
+            .categoryGhost {
+                color: #000;
+                font-size: 0.75rem;
+            }
+            .categoryCosmic {
+                color: #1259D5;
+                font-size: 0.75rem;
+            }
+            .categoryHonorary {
+                color: #505050;
+                font-size: 0.75rem;
+            }
+            .categoryHero {
+                color: #FFDA95;
+                font-size: 0.75rem;
+            }
+            .categoryVillain {
+                color: #000000;
+                font-size: 0.75rem;
+            }
+            .categoryVillian {
+                color: #000000;
+                font-size: 0.75rem;
+            }
+            .categorySapphireLeader {
+                color: linear-gradient(to right, #1273D4,#0B60B4);
+                font-size: 0.75rem;
+            }
+            .categoryVioletLeader {
+                color: linear-gradient(to right, #1273D4,#0B60B4);
+                font-size: 0.75rem;
+            }
+            .categoryOnyxLeader {
+                color: linear-gradient(to right, #1273D4,#0B60B4);
+                font-size: 0.75rem;
+            }
+            .categoryGoldLeader {
+                color: linear-gradient(to right, #1273D4,#0B60B4);
+                font-size: 0.75rem;
+            }
+            .categoryTrueFlame {
+                color: linear-gradient(to right, #ACFDC5,#EFD3A1, #FAA3D6, #BDB0FF, #A8C9FE);
+                font-size: 0.75rem;
+            }
+            .categoryAnomaly {
+                color: rgb(140,222,243);
+                font-size: 0.75rem;
+            }
+            .categoryDarkFlame {
+                color: #FC686D;
+                font-size: 0.75rem;
+            }
+            .categorySins {
+                color: #F61835;
+                font-size: 0.75rem;
+            }
+            .categoryEtherlord {
+                color: #A3059B;
+                font-size: 0.75rem;
+            }
+            .categoryMysticNeko {
+                color: linear-gradient(to right, #BBF7FF,#FEFD53);
+                font-size: 0.75rem;
+            }
+            .categoryV2 {
+                color: rgb(104,170,96);
+                font-size: 0.75rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            #zetsuMenu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: row wrap;
+                align-content: center;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+
+            #zetsu {
+                height: 14vh;
+            }
+
+            .chat {
+                position:relative;
+                text-align: center;
+                padding:10px;
+                margin: 10px 30px;
+                color:black;
+                background:#D4DDFC;
+                border-radius: 30px;
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 1rem;
+                justify-content: center;
+                align-items: center;
+            }
+            /* creates part of the curve */
+            .chat:before {
+                content: "";
+                position: absolute;
+                z-index: 2;
+                top: 7px;
+                left: -8px;
+                height: 20px;
+                border-left: 20px solid #D4DDFC;
+                border-bottom-right-radius: 16px 14px;
+                -webkit-transform: translate(0, -2px);
+            }
+            /* creates part of the curved pointy bit */
+            .chat:after {
+                content: "";
+                position: absolute;
+                z-index: 3;
+                top: 7px;
+                left: 4px;
+                width: 26px;
+                height: 20px;
+                background: #FFFFFF;
+                border-top-right-radius: 14px;
+                -webkit-transform: translate(-30px, -2px);
+            }
+
+            button {
+                align-items: center;
+                padding: 7px 40px;
+                min-height: 25px;
+                font-size: 0.9rem;
+                font-weight: 700;
+                color: rgb(24, 29, 34);
+                background: rgb(241, 249, 255);
+                border: 0px solid rgb(24, 29, 34);
+                border-radius: 100px;
+                transform: scale(1);
+                transition: transform 0.5s;
+            }
+            button:hover{
+                background: rgb(201, 211, 252);
+                cursor: pointer;
+                transform: scale(1.05);
+                transition: transform 0.5s;
+            }
+
+
+            @media only screen and (max-width: 500px) {
+                .grid {
+                    grid-template-columns: repeat(auto-fit, 4.5rem);
+                }
+                .suitImage {
+                    width: 4.5rem;
+                }
+                #zetsu {
+                    height: 4.5rem;
+                }
+                h2 {
+                    font-size: 0.75rem;
+                }
+                h1 {
+                    font-size: 1.25rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div id="zetsuMenu">
+                <img id="zetsu" src="/assets/zetsu.d7d741fa.png" onclick="showSuits('All')">
+                <div class="chat">
+                    <a href="https://www.monstersuit.io">
+                        <button>MINT</button>
+                    </a>
+                    <a href="https://opensea.io/collection/monster-suit-px">
+                        <button>MARKET</button>
+                    </a>
+                </div>
+            </div>
+            <ul id="suitGrid" class="grid">
+                <!-- EXAMPLE OF LAYOUT
+                <li onclick="expand(0)">
+                    <img id="000" class="suitImage" src="https://lh3.googleusercontent.com/Th7qm7pweK4XUKyfyWoAurS-8pNcP5QWx4VMof1avwplA4RKj87c26x3wuFe9PM4Ycyp7XlIFchjZE5ORamlKMbK7j3IW6xo2Jp7=w160">
+                </li>
+                <li id="0" class="isHidden">
+                    <h3>Demon Lord #000</h3>
+                    <p>Genesis</p>
+                </li>
+                -->
+                
+            </ul>
+            <script>
+                var activeSuit = -1
+                                
+                const revealed = 364
+
+                var suits = []
+
+                var xmlhttp
+                
+                for(let i = 0; i < revealed; i++) {
+                    var xmlhttp = new XMLHttpRequest();
+
+                    var url = "https://www.monstersuitpx.com/" + i + ".json";
+
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var data = JSON.parse(this.responseText);
+                            if(data.name.search("-") != -1) {
+                                // CREATE IMAGE
+                                let wrapper = document.createElement("li")
+                                wrapper.id = i.toString() + "Image"
+                                let image = document.createElement("img")
+                                image.src = data.image
+                                image.className = "suitImage"
+                                wrapper.appendChild(image)
+                                // image.addEventListener('click', () => { expand(i.toString()) })
+                                
+                                // CREATE OTHER INFO
+                                let information = document.createElement("li")
+                                information.id = i.toString()
+                                // information.className = "isHidden"
+
+                                // NUMBER
+                                let number = document.createElement("h5")
+                                number.innerHTML = data.name.substring(data.name.search("#"), data.name.search("-") - 1)
+                                information.appendChild(number)
+                                // NAME
+                                let name = document.createElement("h3")
+                                name.innerHTML = data.name.substring(data.name.search("-") + 2, data.name.length)
+                                information.appendChild(name)
+
+                                let trait = document.createElement("p")
+                                trait.innerHTML = data.attributes[0].value
+                                trait.className = "category" + data.attributes[0].value.replace(/\s/g, '')
+                                information.appendChild(trait)
+
+                                wrapper.appendChild(information)
+                                document.getElementById("suitGrid").appendChild(wrapper)
+
+                                suits.push(data)
+                            }
+                        }
+                    };
+                    xmlhttp.open("GET", url, true);
+                    xmlhttp.send();
+                }
+
+            </script>
+        
+        </main>
+    </body>
+</html>
